@@ -1,0 +1,35 @@
+.album-item {
+  margin-bottom: 4rem;
+
+  .avatar {
+    width: 200px;
+    height: 200px;
+
+    &__image {
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 2rem;
+    padding: 1rem 0;
+  }
+
+  &__header {
+    display: flex;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    color: color(black);
+    @include font-size(large);
+    @include font-weight(bold);
+    text-transform: capitalize;
+  }
+}

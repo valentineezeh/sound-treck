@@ -1,0 +1,52 @@
+.error {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+
+  &__content {
+    margin-right: 2rem;
+    max-width: max-content;
+
+    @include respond(medium) {
+      margin-right: 0;
+      order: 2;
+      text-align: center;
+    }
+  }
+
+  &__desc {
+    color: color(grey);
+    margin-bottom: 1.5rem;
+  }
+
+  &__heading {
+    color: color(dark);
+    @include font-size(x-large);
+    @include font-weight(semi-bold);
+    margin-bottom: 1.5rem;
+
+    @include respond(small) {
+      font-size: 30px;
+    }
+  }
+
+  &__image {
+    max-width: 680px;
+
+    @include respond(medium) {
+      margin-bottom: 2rem;
+      max-width: 500px;
+      order: 1;
+    }
+  }
+
+  &__inner {
+    align-items: center;
+    display: flex;
+
+    @include respond(medium) {
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+$colors: (
+  ash: #e0e0e0,
+  black: #000,
+  brown: #271a1d,
+  dark: #4f4f4f,
+  dark-ash: #f8f8f8,
+  dark-gold: #d4af37,
+  dark-grey: #828282,
+  gold: #ffc000,
+  green: #27ae60,
+  grey: #6d6d6d,
+  light-gold: #f2c94c,
+  light-grey: #bdbdbd,
+  primary: #ffbc3b,
+  red: #db0000,
+  white: #fff,
+  yellow: #ffd24a
+);
+
+$font-families: (
+  avenir: "Avenir",
+  ubuntu: "Ubuntu"
+);
+
+$main-font: "Avenir", "sans-serif";
+
+$font-weights: (
+  light: 100,
+  book: 300,
+  regular: 400,
+  semi-bold: 500,
+  bold: 700,
+  black: 900
+);
+
+$font-sizes: (
+  xx-small: 9px,
+  x-small: 12px,
+  small: 14px,
+  regular: 16px,
+  medium: 18px,
+  large: 24px,
+  m-large: 35px,
+  x-large: 40px,
+  xx-large: 70px
+);

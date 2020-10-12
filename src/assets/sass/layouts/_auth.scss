@@ -1,0 +1,108 @@
+.auth {
+  @include respond(medium) {
+    grid-template-columns: 100%;
+  }
+  display: grid;
+  grid-template-columns: 50% 50%;
+  min-height: 100vh;
+  background: rgba(196, 196, 196, 0.24);
+
+  &__button {
+    margin-top: 1.5rem;
+  }
+
+  &__content {
+    @include respond(medium) {
+      display: none;
+    }
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__desc {
+    @include font-size(medium);
+    @include font-weight(light);
+  }
+
+  &__form {
+    @include respond(small) {
+      width: 90%;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 350px;
+    background: color(white);
+
+    &-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      .auth--overlay {
+        @include respond(medium) {
+          display: none;
+        }
+        display: none;
+      }
+    }
+
+    .logo {
+      display: block;
+      align-self: center;
+      margin-bottom: 1.5rem;
+      width: 100px;
+    }
+
+    &--title {
+      @include font-size(x-small);
+      @include font-weight(semi-bold);
+      position: relative;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      text-transform: uppercase;
+      color: color(dark-gold);
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: rgba(196, 196, 196, 0.46);
+        content: "";
+      }
+    }
+  }
+
+  &__heading {
+    @include font-size(x-large);
+    @include font-weight(light);
+  }
+
+  &--overlay {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(31, 23, 0, 0.79);
+  }
+
+  &__title-block {
+    z-index: 5;
+    position: relative;
+    padding: 3rem;
+    color: color(white);
+  }
+}

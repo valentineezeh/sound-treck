@@ -1,0 +1,52 @@
+.dashboard {
+  &--user {
+    background-color: color(dark-ash);
+  }
+
+  .user {
+    &__avatar {
+      width: 250px;
+      height: 280px;
+
+      &-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &-container {
+      z-index: 3;
+      position: relative;
+      top: -150px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    &__details {
+      margin-left: 1rem;
+    }
+
+    &-info {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &__name {
+      @include font-size(x-large);
+      @include font-size(large);
+      text-transform: capitalize;
+      color: color(dark);
+    }
+
+    &__buttons {
+      @include respond(small) {
+        position: relative;
+      }
+      margin-left: 150px;
+    }
+  }
+}

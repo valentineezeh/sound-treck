@@ -1,0 +1,23 @@
+.page {
+  @include respond(small) {
+    grid-template-columns: 100%;
+  }
+  display: grid;
+  grid-template-columns: 70px calc(100% - 70px);
+  min-height: 100vh;
+
+  &--no-sidebar {
+    grid-template-columns: 100% !important;
+  }
+
+  &__body {
+    position: relative;
+    padding-top: 2rem;
+  }
+
+  &__inner {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}

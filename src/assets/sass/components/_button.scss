@@ -1,0 +1,85 @@
+.btn {
+  @include font-size(x-small);
+  @include font-weight(bold);
+  display: inline-block;
+  border-radius: 3px;
+  border: 0;
+  padding: 0.9rem 2.7rem;
+  vertical-align: middle;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: color(black);
+  transition: transform 0.3s;
+  transition-property: transform, box-shadow, color;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:hover {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    color: initial;
+    transform: translateY(-3px);
+    -webkit-transform: translateY(-3px);
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--outline {
+    border: 1px solid color(dark-gold);
+    background: transparent;
+    color: color(dark-gold);
+
+    &:hover {
+      color: color(dark-gold);
+    }
+  }
+
+  &--outline2 {
+    border: 1px solid color(dark-gold);
+    background: transparent;
+    color: color(dark-gold);
+    position: absolute;
+    top: -4%;
+    right: 10%;
+
+    @include respond(small) {
+      margin-top: -10%;
+    }
+
+    &:hover {
+      color: color(dark-gold);
+    }
+  }
+
+  &--primary {
+    background: color(dark-gold) !important;
+    color: color(black);
+  }
+
+  &--danger {
+    @include respond(small) {
+      margin-top: 10px;
+    }
+    background: red;
+    cursor: pointer;
+  }
+
+  &--edit {
+    @include respond(small) {
+      margin-top: 10px;
+    }
+    background: green;
+  }
+}
+
+button {
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}

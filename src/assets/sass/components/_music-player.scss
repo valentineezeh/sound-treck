@@ -1,0 +1,479 @@
+.music-player {
+  position: relative;
+
+  .change-view {
+    @include font-size(medium);
+    position: absolute;
+    top: 2px;
+    right: 1rem;
+    display: none;
+  }
+
+  &-block {
+    @include respond(small) {
+      bottom: 60px;
+      padding: 0.5rem 0 0.1rem 0.1rem;
+    }
+    z-index: 999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: none;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.12);
+    padding: 1rem;
+    width: 100%;
+    background: color(white);
+
+    &.active {
+      display: block;
+    }
+
+    audio {
+      z-index: 1;
+      position: absolute;
+      visibility: hidden;
+    }
+  }
+
+  &__avatar {
+    @include respond(small) {
+      width: 40px;
+      height: 40px;
+    }
+    width: 70px;
+    height: 60px;
+
+    &-image {
+      @include respond(small) {
+        border-radius: 50%;
+      }
+      border-radius: 8px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__details {
+    margin-left: 1rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__artist {
+    @include font-size(x-small);
+    @include font-weight(bold);
+    margin-bottom: 0;
+    text-transform: capitalize;
+    color: color(grey);
+  }
+
+  &__title {
+    @include respond(small) {
+      margin-bottom: 2px;
+    }
+    @include font-size(small);
+    @include font-weight(bold);
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+    color: color(dark);
+  }
+
+  .player-button {
+    @include respond(small) {
+      @include font-size(large);
+      width: 20px;
+      height: 20px;
+      background-color: #e9ecef;
+    }
+    @include font-size(x-large);
+    z-index: 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    cursor: pointer;
+    color: color(dark);
+    transition: color 0.8s ease;
+
+    &:hover {
+      color: color(dark-gold);
+    }
+
+    &--bg {
+      @include respond(small) {
+        background-color: #e9ecef;
+      }
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0.4rem;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      background-color: #fff;
+
+      .progress-bar__fill {
+        @include respond(small) {
+          display: block;
+        }
+        display: none;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &--progress {
+      @include respond(small) {
+        display: block;
+      }
+      position: absolute;
+      top: 0;
+      display: none;
+      width: 26px;
+      height: 26px;
+
+      circle {
+        stroke-dasharray: 10 20;
+      }
+    }
+
+    &-icon {
+      @include respond(small) {
+        width: 12px;
+        height: 12px;
+      }
+      width: 16px;
+      height: 16px;
+
+      &.play-icon {
+        display: none;
+      }
+
+      &.pause-icon {
+        display: none;
+      }
+
+      &.active {
+        display: block;
+      }
+    }
+
+    &.prev {
+      @include respond(small) {
+        display: none;
+      }
+      transform: rotate(180deg);
+      transform-origin: center;
+    }
+
+    &s {
+      @include respond(small) {
+        justify-content: space-between;
+        width: 100%;
+      }
+      display: flex;
+      align-items: center;
+    }
+
+    &--small {
+      @include respond(small) {
+        margin: 0 0.4rem !important;
+        width: 26px;
+        height: 26px;
+      }
+      @include font-size(medium);
+      width: 20px;
+      height: 20px;
+      color: color(light-grey);
+
+      &.playlist {
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  // sass-lint:disable no-ids
+  #handle {
+    position: absolute;
+    top: 2px;
+    border-radius: 50%;
+    border: 2px solid color(dark-gold);
+    width: 15px;
+    height: 15px;
+    background: color(white);
+    transform: translate(-50%, -50%);
+  }
+
+  .full-screen-play {
+    width: 20px;
+  }
+
+  #playip {
+    background-color: #e9ecef;
+    border-radius: 20px;
+    height: 5px;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+  }
+
+  #typeip {
+    width: 120%;
+    // background-color: #e9ecef;
+    background: linear-gradient(to right, #9e6eff 20%, #3b3545 0);
+    border-radius: 20px;
+    height: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 20px;
+      background: black;
+    }
+  }
+
+  .playerseeker {
+    width: 100%;
+  }
+
+  .progressbar {
+    @include respond(small) {
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    margin-left: 3rem;
+    width: 100%;
+
+    &__text {
+      @include font-size(x-small);
+      margin: 0 0.5rem;
+    }
+  }
+
+  .no-shadow {
+    box-shadow: none;
+    outline: none;
+    position: relative;
+    right: 30px;
+    background-color: "";
+    @include respond(small) {
+      position: relative;
+      left: 40px;
+    }
+    .rhap_main-controls-button {
+      color: black;
+      font-size: 25px;
+    }
+    .rhap_progress-indicator {
+      background: black; //#f2c94c;
+    }
+    .rhap_progress-filled {
+      background-color: #f2c94c;
+    }
+    .rhap_progress-container {
+      outline: none;
+    }
+    .rhap_repeat-button {
+      color: black;
+    }
+    .rhap_progress-section {
+      display: flex;
+      @include respond(small) {
+        display: none;
+      }
+    }
+    .rhap_additional-controls {
+      @include respond(small) {
+        display: none;
+      }
+    }
+  }
+
+  .no-shadow-two {
+    box-shadow: none;
+    outline: none;
+    background-color: transparent;
+    @include respond(small) {
+      position: relative;
+      // left: 40px;
+    }
+
+    .rhap_main-controls-button {
+      color: black;
+      font-size: 25px;
+    }
+    .rhap_progress-indicator {
+      background: black; //#f2c94c;
+    }
+    .rhap_progress-filled {
+      background-color: #f2c94c;
+    }
+    .rhap_progress-container {
+      outline: none;
+    }
+    .rhap_repeat-button {
+      color: black;
+    }
+    .rhap_progress-section {
+      display: flex;
+      @include respond(small) {
+        display: none;
+      }
+    }
+    .rhap_volume-indicator {
+      background: black;
+    }
+    .rhap_volume-button {
+      color: black;
+    }
+    .rhap_volume-bar {
+      outline: none;
+    }
+    .rhap_main-controls {
+      @include respond(small) {
+        position: relative;
+        right: 25px;
+      }
+    }
+  }
+
+  .button-style {
+    @include respond(small) {
+      position: relative;
+      left: 130px;
+      bottom: 44px;
+    }
+  }
+
+  .seeker {
+    position: relative;
+    margin: 0 auto;
+    border-radius: 0.25rem;
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background-color: color(dark-gold);
+
+    .progress-bar {
+      position: relative;
+      border-radius: 0.25rem;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      background-color: transparent;
+
+      &__fill {
+        position: relative;
+        top: 0;
+        right: 0;
+        border-radius: 0.25rem;
+        width: 100%;
+        height: 100%;
+        background-color: #e9ecef;
+      }
+    }
+  }
+
+  &__volume {
+    @include respond(small) {
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    width: 100%;
+    max-width: 200px;
+
+    .volume-icon {
+      margin-right: 1rem;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      fill: color(light-grey);
+
+      &:hover {
+        fill: color(dark-gold);
+      }
+    }
+
+    .progressbar {
+      margin-left: 0;
+    }
+  }
+  &-playlist-header {
+    font-style: normal;
+    font-size: 0px;
+    color: #000000;
+  }
+  &-play-list {
+    position: relative;
+    width: 108%;
+    height: 60px;
+    right: 15px;
+
+    background: #c4c4c4;
+    // opacity: 0.1;
+  }
+  &-plus-button {
+    position: relative;
+    width: 20px;
+    height: 34px;
+    left: 80%;
+    top: 10px;
+    font-size: 33px;
+    line-height: 40px;
+    color: #020002;
+    border: 0px solid #333333;
+  }
+  &-side-patch {
+    position: absolute;
+    width: 5px;
+    height: 59px;
+    left: 0%;
+    top: 0px;
+    background: #f2c94c;
+  }
+
+  &-list-text {
+    position: absolute;
+    width: 100%;
+    height: 24px;
+    left: 40px;
+    top: 25px;
+    font-weight: 400;
+    line-height: 136%;
+    color: black;
+    // #4F4F4F;
+  }
+  &-empty-playlist {
+    font-weight: 400;
+    line-height: 136%;
+    color: black;
+  }
+
+  &-playlist-icon {
+    position: relative;
+    left: 0;
+    width: 50px;
+    height: 50px;
+  }
+}

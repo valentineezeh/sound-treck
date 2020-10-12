@@ -1,0 +1,47 @@
+.filler {
+  flex-grow: 1;
+}
+
+.mb-10 {
+  margin-bottom: 10rem;
+}
+
+@each $name, $weight in $font-weights {
+  .font-#{$name} {
+    font-weight: $weight !important;
+  }
+}
+
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background: $color !important;
+  }
+
+  .color-#{$name} {
+    color: $color !important;
+  }
+}
+
+$number: 12;
+
+.reorder-md-1 {
+  @include respond(medium) {
+    order: 1;
+  }
+}
+
+.reorder-md-2 {
+  @include respond(medium) {
+    order: 2;
+  }
+}
+
+.reorder-md-3 {
+  @include respond(medium) {
+    order: 3;
+  }
+}
+
+.relative {
+  position: relative;
+}

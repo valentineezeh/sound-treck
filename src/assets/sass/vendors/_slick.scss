@@ -1,0 +1,54 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.slick {
+  &__arrow {
+    @include respond(small) {
+      top: 60px;
+      width: 30px;
+      height: 30px;
+
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+    z-index: 50;
+    position: absolute;
+    top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.32);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: color(white);
+    cursor: pointer;
+    transform: translateY(-50%);
+
+    &--left {
+      @include respond(small) {
+        left: -4px;
+      }
+      left: 4px;
+    }
+
+    &--right {
+      right: 0;
+    }
+
+    &s {
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    width: 10px;
+    height: 10px;
+  }
+
+  &__slider {
+    position: relative;
+  }
+}

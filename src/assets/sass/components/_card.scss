@@ -1,0 +1,80 @@
+.card {
+  background-color: color(white);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 0;
+  flex: 1;
+  padding: 2rem;
+
+  &-block {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__col {
+    display: flex;
+    align-items: center;
+    padding-right: 0;
+
+    &:last-child {
+      padding-left: 1rem;
+    }
+
+    &--left {
+      width: 20%;
+    }
+
+    &--right {
+      width: calc(100% - 20%);
+    }
+  }
+
+  &-row {
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.05);
+    display: flex;
+    padding: 1rem 0;
+  }
+
+  &-social {
+    display: flex;
+    align-items: center;
+
+    &__item {
+      background: color(white);
+      border: 1px solid color(grey);
+      border-radius: 50%;
+      color: color(grey);
+      cursor: pointer;
+      @include font-size(medium);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.5rem;
+      width: 30px;
+      height: 30px;
+      transition: all 0.8s ease;
+
+      &:hover {
+        background-color: color(grey);
+        color: color(white);
+      }
+    }
+  }
+
+  &__text {
+    @include font-size(small);
+    line-height: 1.8;
+    margin-bottom: 0;
+
+    &--small {
+      @include font-size(x-small);
+    }
+  }
+
+  &__title {
+    color: color(dark);
+    @include font-size(large);
+  }
+}

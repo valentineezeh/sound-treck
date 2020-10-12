@@ -1,0 +1,54 @@
+// global
+@import "globals/variables";
+@import "globals/mixins";
+@import "globals/functions";
+
+// base
+@import "base/reset";
+@import "base/fonts";
+@import "base/typography";
+@import "base/base";
+
+// vendors
+@import "vendors/bootstrap";
+@import "vendors/slick";
+
+// components
+@import "components/album-item";
+@import "components/bottom-nav";
+@import "components/button";
+@import "components/card";
+@import "components/empty-list";
+@import "components/error-card";
+@import "components/form";
+@import "components/genre";
+@import "components/loader";
+@import "components/modal";
+@import "components/music";
+@import "components/music-item";
+@import "components/music-player";
+@import "components/music-player-full-screen";
+@import "components/nav";
+@import "components/sidebar";
+@import "components/slider-item";
+@import "components/pagination";
+
+// layout
+@import "layouts/auth";
+@import "layouts/footer";
+@import "layouts/header";
+@import "layouts/page";
+@import "layouts/section";
+
+// pages
+@import "pages/about";
+@import "pages/dashboard";
+@import "pages/error";
+@import "pages/index";
+@import "pages/login";
+@import "pages/signup";
+
+// themes
+
+// helpers
+@import "helpers/utils";

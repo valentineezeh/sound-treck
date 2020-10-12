@@ -1,0 +1,29 @@
+.login {
+  &__heading {
+    color: color(grey);
+    @include font-size(medium);
+    @include font-weight(book);
+    margin-bottom: 0.5rem;
+  }
+
+  &__desc {
+    color: color(ash);
+    @include font-size(small);
+    @include font-weight(light);
+    margin-bottom: 3rem;
+  }
+
+  &__link {
+    &:hover {
+      color: color(dark-gold);
+    }
+
+    &s {
+      color: color(grey);
+      display: flex;
+      @include font-size(x-small);
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+  }
+}

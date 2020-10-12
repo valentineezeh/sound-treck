@@ -1,0 +1,155 @@
+.sidebar {
+  @include respond(small) {
+    display: none;
+  }
+  background: #171d20;
+
+  &-expand {
+    margin-top: 10px;
+    cursor: pointer;
+
+    .sidebar-menu__icon {
+      transition: transform 0.8s ease;
+    }
+  }
+
+  &__inner {
+    @include respond(small) {
+      width: 50px;
+    }
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    width: 70px;
+    height: 100vh;
+    overflow-y: auto;
+
+    &--expanded {
+      align-items: flex-start;
+      width: 200px;
+      background: #171d20;
+
+      .sidebar-expand {
+        margin-left: 1rem;
+
+        .sidebar-menu__icon {
+          transform: rotateY(180deg);
+          transform-origin: center;
+        }
+      }
+
+      .sidebar__logo {
+        margin-left: 1rem;
+      }
+
+      .sidebar-menu__link {
+        padding: 1rem;
+        text-align: left;
+      }
+
+      .sidebar-menu__text {
+        display: inline;
+      }
+    }
+  }
+
+  &__logo {
+    margin-top: 1rem;
+    padding: 0;
+    max-width: 60px;
+  }
+
+  &-menu {
+    margin-top: 4rem;
+    width: 100%;
+    list-style: none;
+
+    &__icon {
+      @include respond(small) {
+        width: 20px;
+        height: 20px;
+      }
+      width: 30px;
+      height: 30px;
+
+      path {
+        fill: color(gold);
+      }
+    }
+
+    &__item {
+      margin-bottom: 1.7rem;
+    }
+
+    &__link {
+      @include font-size(small);
+      @include font-weight(semi-bold);
+      display: list-item;
+      align-items: center;
+      padding: 1rem 0;
+      text-align: center;
+      text-decoration: none;
+      color: color(primary);
+      transition-duration: 0.8s;
+      transition-property: background-color, color;
+      transition-timing-function: ease;
+
+      &:hover {
+        background: color(gold);
+        text-decoration: none;
+        color: color(black);
+
+        .sidebar-menu__icon {
+          path {
+            fill: color(black);
+          }
+        }
+      }
+
+      &.active {
+        background: color(gold);
+        color: color(black);
+
+        .sidebar-menu__icon {
+          path {
+            fill: color(black);
+          }
+        }
+      }
+    }
+
+    &__text {
+      display: none;
+      margin-left: 1rem;
+    }
+  }
+
+  &__profile {
+    position: absolute;
+    bottom: 1rem;
+    left: 0rem;
+    width: 100%;
+    top: 700px;
+
+    a {
+      display: flex;
+      justify-content: center;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      background: color(white);
+    }
+
+    .sidebar-menu__text {
+      color: color(white);
+    }
+  }
+}

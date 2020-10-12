@@ -1,0 +1,25 @@
+.heading {
+  @include respond(small) {
+    @include font-size(regular);
+  }
+
+  @include font-weight(bold);
+  @include font-size(medium);
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+  font-family: $main-font;
+  color: color(dark);
+}
+
+.paragraph {
+  @include respond(small) {
+    @include font-size(small);
+  }
+
+  @include font-weight(regular);
+  @include font-size(regular);
+  line-height: 1.8;
+  letter-spacing: 0.2px;
+  font-family: $main-font;
+  color: color(grey);
+}

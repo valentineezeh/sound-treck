@@ -1,0 +1,32 @@
+.modal {
+  &-header,
+  &-body {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  &-body {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+
+  &-header {
+    color: color(dark);
+    text-transform: uppercase;
+    @include font-size(small);
+    @include font-weight(bold);
+  }
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  // left: 20%;
+  flex-direction: column;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
